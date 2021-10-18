@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { VueLoaderPlugin } = require("vue-loader");
 
 module.exports = {
   entry: {
@@ -10,10 +11,28 @@ module.exports = {
     path: path.resolve("dist"),
   },
   module: {
-    rules: [{ test: /\.ts$/, use: "ts-loader" }],
+    rules: [
+      {
+        test: /\.vue$/,
+        loader: "vue-loader",
+      },
+      {
+        test: /\.ts$/,
+        loader: "ts-loader",
+        options: {
+          appendTsSuffixTo: [/\.vue$/],
+        },
+      },
+    ],
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "Home | サイト名",
+      template: "./src/index.html",
+    }),
+    new VueLoaderPlugin(),
+  ],
   resolve: {
-    extensions: [".ts", ".js"],
+    extensions: [".ts"],
   },
 };
