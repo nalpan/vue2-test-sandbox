@@ -16,6 +16,8 @@
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",
+    "@vue/test-utils": "^1.2.2",
+    "@vue/vue2-jest": "^27.0.0-alpha.2",
     "html-webpack-plugin": "^5.4.0",
     "jest": "^27.3.0",
     "ts-jest": "^27.0.7",

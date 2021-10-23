@@ -10,10 +10,11 @@ import Vue from "vue";
 import { sum } from "./sample";
 
 export default Vue.extend({
-  data() {
-    return {
-      message: "hello vue!",
-    };
+  props: {
+    message: {
+      type: String,
+      default: "hello vue!"
+    }
   },
   computed: {
     sum() {
