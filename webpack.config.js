@@ -36,4 +36,10 @@ module.exports = {
   resolve: {
     extensions: [".vue", ".ts", ".js"],
   },
+  devServer: {
+    port: 8000,
+    static: {
+      directory: path.resolve('dist'),
+    },
+  },
 };
