@@ -1,16 +1,30 @@
 <template>
-  <div>hello vue!</div>
+  <div class="text">
+    <div>{{ message }}</div>
+    <div>{{ sum }}</div>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import Vue from "vue";
+import { sum } from "./sample";
 
-export default defineComponent({
-  setup() {
-    return {};
+export default Vue.extend({
+  data() {
+    return {
+      message: "hello vue!",
+    };
+  },
+  computed: {
+    sum() {
+      return sum(1, 2);
+    },
   },
 });
 </script>
 
 <style scoped>
+/* .text {
+  color: red;
+} */
 </style>

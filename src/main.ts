@@ -1,5 +1,5 @@
-import { createApp } from "vue";
-import Component from "./Component.vue";
+import Vue from "vue";
+import SampleComponent from "./Component.vue";
 import { sum } from "./sample";
 
 function greeter(person: string) {
@@ -11,4 +11,6 @@ let user = "Jane User";
 console.log(greeter(user));
 console.log(sum(1, 2));
 
-createApp(Component).mount("#app");
+new Vue({
+  render: (h) => h(SampleComponent),
+}).$mount("#app");

@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { VueLoaderPlugin } = require("vue-loader");
 
 module.exports = {
+  mode: "development",
   entry: {
     main: path.resolve("src", "main.ts"),
   },
@@ -33,6 +34,6 @@ module.exports = {
     new VueLoaderPlugin(),
   ],
   resolve: {
-    extensions: [".ts"],
+    extensions: [".vue", ".ts", ".js"],
   },
 };
