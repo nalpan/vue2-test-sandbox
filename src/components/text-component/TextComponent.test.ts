@@ -2,13 +2,13 @@
 import Component from "./TextComponent.vue";
 import { shallowMount } from "@vue/test-utils"
 
-describe("computed errorMsg", () => {
-  it("empty", () => {
-    const wrapper = shallowMount(Component, {propsData: {value: "success"}})
-    expect(wrapper.vm.errorMsg).toBe("")
+describe("computed isError", () => {
+  it("not empty -> false", () => {
+    const wrapper = shallowMount(Component, {propsData: {value: "a"}})
+    expect(wrapper.vm.isError).toBeFalsy()
   });
-  it("error!!!", () => {
+  it("empty -> true", () => {
     const wrapper = shallowMount(Component, {propsData: {value: ""}})
-    expect(wrapper.vm.errorMsg).toBe("error!!!")
+    expect(wrapper.vm.isError).toBeTruthy()
   });
 });

@@ -2,7 +2,7 @@
   <div>
     <div><input type="text" v-model="innerValue" /></div>
     <div>
-      <span>{{ errorMsg }}</span>
+      <span v-if="isError">error!!!</span>
     </div>
   </div>
 </template>
@@ -28,8 +28,8 @@ export default Vue.extend({
       },
     },
     /** 状態のテスト用 */
-    errorMsg() {
-      return this.value === "success" ? "" : "error!!!";
+    isError() {
+      return this.value === "";
     },
   },
 });
