@@ -8,6 +8,7 @@
 </template>
 
 <script lang="ts">
+// @ts-nocheck
 import Vue from 'vue'
 
 export default Vue.extend({
@@ -20,11 +21,9 @@ export default Vue.extend({
   computed: {
     innerValue: {
       get() {
-        // @ts-ignore
         return this.value;
       },
       set(value) {
-        // @ts-ignore
         this.$emit("input", value);
       },
     },
