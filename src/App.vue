@@ -33,7 +33,7 @@ export default Vue.extend({
 </script>
 
 <style>
-/* #app {
+#app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -48,5 +48,5 @@ export default Vue.extend({
   position: fixed;
   left: 0px;
   bottom: 0px;
-} */
+}
 </style>
