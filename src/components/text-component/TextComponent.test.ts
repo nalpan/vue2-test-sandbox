@@ -11,13 +11,4 @@ describe("Component", () => {
     const wrapper = shallowMount(Component, {propsData: {value: ""}})
     expect(wrapper.vm.errorMsg).toBe("error!!!")
   });
-
-  // it("message", () => {
-  //   const wrapper = shallowMount(Component, {
-  //     propsData: {
-  //       message: "message!!!"
-  //     }
-  //   })
-  //   expect(wrapper.vm.$props.message).toBe("message!!!")
-  // });
 });

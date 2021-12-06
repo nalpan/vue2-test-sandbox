@@ -35,7 +35,7 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-.footer {
+/* .footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,5 +50,5 @@ export default Vue.extend({
 }
 .button.error {
   background-color: rgba(193, 66, 66, 0.5);
-}
+} */
 </style>
