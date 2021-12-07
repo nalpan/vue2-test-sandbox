@@ -6,7 +6,6 @@ describe('', () => {
     const component = render(App)
     const button = component.baseElement.querySelector('button.button')
     await fireEvent.click(button!)
-    console.log(component.baseElement.innerHTML)
     expect(button!.classList.contains('error')).toBeTruthy()
   })
 })
