@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    <div class="display">
-      <span>{{ text }}</span>
-    </div>
     <text-component v-model="text" />
-    <footer-component class="footer" :text="text" />
+    <div class="text-length-result">
+      <span v-if="lengthError" style="color: red;">text length ng</span>
+      <span v-if="!lengthError">text length ok!!!</span>
+    </div>
+    <footer-component class="footer" :text="text" @textValidate="lengthValidate($event)"/>
   </div>
 </template>
 
@@ -22,13 +23,14 @@ export default Vue.extend({
   data() {
     return {
       text: "",
+      lengthError: true
     };
   },
   methods: {
-    clearText() {
-      this.text = "";
-    },
-  },
+    lengthValidate(isSuccess: boolean){
+      this.lengthError = !isSuccess
+    }
+  }
 });
 </script>
 

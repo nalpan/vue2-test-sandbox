@@ -5,7 +5,7 @@
       :class="{ error: error }"
       @click="textValidate(text)"
     >
-      text is 'success'?
+      text length over 10?
     </button>
   </div>
 </template>
@@ -28,7 +28,7 @@ export default Vue.extend({
   },
   methods: {
     textValidate(text: string) {
-      this.error = !isSuccess(text);
+      this.$emit('textValidate', isSuccess(text))
     },
   },
 })
