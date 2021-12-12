@@ -2,7 +2,8 @@
   <div>
     <div><input type="text" v-model="innerValue" /></div>
     <div>
-      <span v-if="isError">error!!!</span>
+      <span v-if="isError" style="color: red;">no input!!!</span>
+      <span v-if="!isError">input</span>
     </div>
   </div>
 </template>
