@@ -1,10 +1,10 @@
 import {isSuccess} from './FooterComponent.modules'
 
 describe('isSuccess', () => {
-  it('success -> true', () => {
-    expect(isSuccess('success')).toBeTruthy()
+  it('length 10 -> true', () => {
+    expect(isSuccess('1234567890')).toBeTruthy()
   })
-  it('succes -> false', () => {
-    expect(isSuccess('succes')).toBeFalsy()
+  it('length 9 -> false', () => {
+    expect(isSuccess('123456789')).toBeFalsy()
   })
 })
