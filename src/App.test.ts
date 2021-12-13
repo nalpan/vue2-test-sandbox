@@ -6,7 +6,7 @@ describe('length validate', () => {
     const component = render(App)
 
     const text = component.baseElement.querySelector('.text-length-result span')
-    expect(text!.textContent).toBe(('text length ng'))
+    expect(text!.textContent).toBe('text length ng')
     const style = window.getComputedStyle(text!)
     expect(style.color).toBe('red')
   })
@@ -18,7 +18,7 @@ describe('length validate', () => {
     await fireEvent.click(button!)
 
     const text = component.baseElement.querySelector('.text-length-result span')
-    expect(text!.textContent).toBe(('text length ng'))
+    expect(text!.textContent).toBe('text length ng')
     const style = window.getComputedStyle(text!)
     expect(style.color).toBe('red')
   })
@@ -30,7 +30,7 @@ describe('length validate', () => {
     await fireEvent.click(button!)
 
     const text = component.baseElement.querySelector('.text-length-result span')
-    expect(text!.textContent).toBe(('text length ok!!!'))
+    expect(text!.textContent).toBe('text length ok!!!')
     const style = window.getComputedStyle(text!)
     expect(style.color).toBe('')
   })
