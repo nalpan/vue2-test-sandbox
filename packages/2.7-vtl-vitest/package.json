@@ -1,5 +1,5 @@
 {
-  "name": "vue2.7-pinia-vitest",
+  "name": "2.7-vtl-vitest",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -17,8 +17,12 @@
     "@testing-library/vue": "^5.8.3",
     "@vitejs/plugin-vue2": "^2.0.1",
     "jsdom": "^20.0.3",
-    "typescript": "~3.5.3",
+    "typescript": "^4.9.4",
     "vite": "^3.2.4",
     "vitest": "^0.25.3"
+  },
+  "volta": {
+    "node": "18.12.1",
+    "npm": "9.2.0"
   }
 }
