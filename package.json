@@ -4,15 +4,15 @@
   "description": "",
   "private": true,
   "workspaces": [
-    "packages/2.6-ts-vtl",
-    "packages/2.7-vtl-jest",
-    "packages/2.7-vtl-vitest"
+    "packages/2.6-jest",
+    "packages/2.7-jest",
+    "packages/2.7-vitest"
   ],
   "scripts": {
     "test": "npm run test:2.6-jest && npm run test:2.7-jest && npm run test:2.7-vitest",
-    "test:2.6-jest": "npm run test -w packages/2.6-ts-vtl",
-    "test:2.7-jest": "npm run test -w packages/2.7-vtl-jest",
-    "test:2.7-vitest": "npm run test -w packages/2.7-vtl-vitest"
+    "test:2.6-jest": "npm run test -w packages/2.6-jest",
+    "test:2.7-jest": "npm run test -w packages/2.7-jest",
+    "test:2.7-vitest": "npm run test -w packages/2.7-vitest"
   },
   "repository": {
     "type": "git",
