@@ -1,3 +1,0 @@
-# testing
-
-`$ npm run test`

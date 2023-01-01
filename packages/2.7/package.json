@@ -1,18 +1,17 @@
 {
-  "name": "2.7-jest",
+  "name": "2.7",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "npm run jest && npm run vitest",
+    "jest": "jest",
+    "vitest": "vitest"
+
   },
   "dependencies": {
     "pinia": "^2.0.26",
     "vue": "^2.7"
-  },
-  "devDependencies": {
-    "@pinia/testing": "^0.0.14",
-    "vue-template-compiler": "^2.7.14"
   },
   "volta": {
     "node": "18.12.1",
