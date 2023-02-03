@@ -5,9 +5,9 @@ import { createLocalVue } from "@vue/test-utils";
 import { PiniaVuePlugin } from "pinia";
 import { createTestingPinia } from "@pinia/testing";
 import { render } from "@testing-library/vue";
-import TodoComponent from "./Todo.vue";
+import MyComponent from "./MyComponent.vue";
 import { expect, it, vi } from "vitest";
-import { TodoStore } from "./Todo.store";
+import { Store } from "./Store";
 
 it("componentレンダリング", async () => {
   // テスト環境用のVueインスタンス生成
@@ -15,13 +15,13 @@ it("componentレンダリング", async () => {
   localVue.use(PiniaVuePlugin);
 
   // レンダリング
-  const renderResult = render(TodoComponent, {
+  const renderResult = render(MyComponent, {
     localVue,
     pinia: createTestingPinia({
       stubActions: false, // actionのスタブ化を解除
       plugins: [
         () => {
-          const TodoStoreA = TodoStore(); // storeの呼び出し
+          const TodoStoreA = Store(); // storeの呼び出し
           // loadTasksのスタブ化
           TodoStoreA.loadTasks = vi.fn().mockImplementation(() => {
             TodoStoreA.tasks = [

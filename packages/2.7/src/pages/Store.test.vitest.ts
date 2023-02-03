@@ -1,10 +1,11 @@
 /**
  * storeのテスト
  */
-import { TodoStore } from "./Todo.store";
-import * as TodoRepo from "../repositories/todo.repo";
+import { Store } from "./Store";
+import * as TodoRepo from "../repositories/repo";
 import { setActivePinia } from "pinia";
 import { createTestingPinia } from "@pinia/testing";
+import { it, vi, expect, beforeEach } from "vitest";
 
 beforeEach(() => {
   // テスト環境でのPinia準備
@@ -16,7 +17,7 @@ beforeEach(() => {
 });
 
 it("store初期値 -> tasksは空", () => {
-  const store = TodoStore();
+  const store = Store();
   expect(store.tasks).toStrictEqual([]);
 });
 
@@ -28,12 +29,12 @@ it("loadTasks実行 -> fetchTasksの結果がtasksへ格納される", async () 
       description: "task1",
     },
   ];
-  jest.spyOn(TodoRepo, "fetchTasks").mockImplementation(() => {
+  vi.spyOn(TodoRepo, "fetchTasks").mockImplementation(() => {
     return Promise.resolve(response);
   });
 
   // loadTasksの実行
-  const store = TodoStore();
+  const store = Store();
   await store.loadTasks();
   expect(store.tasks).toStrictEqual(response);
 });

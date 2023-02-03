@@ -9,8 +9,8 @@
 </template>
 
 <script setup lang="ts">
-import { TodoStore } from './Todo.store'
+import { Store } from './Store'
 
-const store = TodoStore()
+const store = Store()
 store.loadTasks()
 </script>

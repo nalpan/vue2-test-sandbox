@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { task, fetchTasks } from "../repositories/todo.repo";
+import { task, fetchTasks } from "../repositories/repo";
 
-export const TodoStore = defineStore('TodoStore', () => {
+export const Store = defineStore('Store', () => {
   let tasks = ref<task[]>([])
   async function loadTasks() {
     const response = await fetchTasks();
